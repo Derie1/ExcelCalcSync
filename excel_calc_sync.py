@@ -24,7 +24,7 @@ def get_DB_range(file): #file = panels_with_excel[panel][1]
 
 app = QtWidgets.QApplication([])
 
-mdb_file = QtWidgets.QFileDialog.getOpenFileName()[0] # выбираем файл расчетки ГРЩ
+mdb_file = QtWidgets.QFileDialog.getOpenFileName(caption="Выберите фай Excel расчета ГРЩ / ВРУ ... ", filter="XLS (*.xls);XLSX (*.xlsx)")[0] # выбираем файл расчетки ГРЩ
 mdb_file_dir = os.path.dirname(mdb_file)
 # print(mdb_file)
 
