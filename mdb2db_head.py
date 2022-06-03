@@ -84,7 +84,7 @@ for panel in db_list_with_excel:
 
 print(f"Всего щитов синхронизировано: {len(db_list_with_excel)}")
 
-logfile = f"{mdb_file_dir}/db2mdb_loads_log.txt"
+logfile = f"{mdb_file_dir}/mdb2db_head_log.txt"
 with open(logfile, "w") as LOG:
     for elem in logger:
         LOG.write(elem + "\n")
