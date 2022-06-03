@@ -61,8 +61,10 @@ for file_name in db_file_list:
 
 # Освновной код синхронизации
 t_data = {}
+logger = []
 for panel in db_list_with_excel:
     print(f"Синхронизируем щит --== {panel} ==--...")
+    logger.append(f"Синхронизируем щит --== {panel} ==--...")
     t_data.clear()
     t_data = data_to_transfer(calc_range, panels_with_excel[panel][0])
     # panel_range = get_DB_range(panels_with_excel[panel][1])
@@ -81,3 +83,8 @@ for panel in db_list_with_excel:
         wb_db.close()
 
 print(f"Всего щитов синхронизировано: {len(db_list_with_excel)}")
+
+logfile = f"{mdb_file_dir}/db2mdb_loads_log.txt"
+with open(logfile, "w") as LOG:
+    for elem in logger:
+        LOG.write(elem + "\n")

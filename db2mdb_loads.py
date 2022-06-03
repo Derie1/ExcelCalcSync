@@ -1,4 +1,3 @@
-from cmath import log
 import os
 from PyQt5 import QtWidgets
 import openpyxl
@@ -88,7 +87,7 @@ logger.append(f"Всего щитов синхронизировано: {sync_co
 logger.append(f"Всего щитов в директории: {len(db_list)}")
 logger.append(f"Щиты не были синхронизированы: {db_list_not_synced}")
 
-logfile = './ZAM_CALC/logfile.txt'
+logfile = f"{mdb_path}/db2mdb_loads_log.txt"
 with open(logfile, "w") as LOG:
     for elem in logger:
         LOG.write(elem + "\n")
