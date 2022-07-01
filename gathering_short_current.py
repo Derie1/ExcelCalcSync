@@ -1,8 +1,6 @@
-from encodings.utf_8 import encode
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtWidgets
 import openpyxl
 import os.path as path
-import io
 import csv
 
 
@@ -32,8 +30,7 @@ sc_log_file = f"{current_path}/short_currents.csv"
 with open(sc_log_file, 'w', encoding='utf8', newline='') as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerows(short_current_list)
-    # for _ in short_current_list:
-    #     csv_writer.writerow([_[0], _[1]])
 
 
 print("Job's DONE!!")
+print(f"Count of records in csv-file: {len(short_current_list)}")
